@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta name="google-site-verification" content="vlJ4kA_qWqcEFGQFVg-fB6oBRhOT-Wes_XDXhhov0Go"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Site.craftt.ir — توسعه‌دهنده وب حرفه‌ای</title>
+<link rel="icon" href="-2147483648_-211238-removebg-preview.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Vazirmatn',sans-serif;scroll-behavior:smooth;}
+body{background:#0a0f1b;color:#fff;overflow-x:hidden;position:relative;}
+
+/* header */
+header{position:relative;min-height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden;}
+header img{width:150px;margin-bottom:25px;animation:floatLogo 4s ease-in-out infinite;filter:drop-shadow(0 0 20px #06b6d4);}
+@keyframes floatLogo{0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
+header h1{font-size:3.2rem;color:#06b6d4;margin-bottom:15px;text-shadow:0 0 35px rgba(6,182,212,0.9);animation:textFadeIn 2s ease-out forwards;opacity:0;}
+header p{font-size:1.3rem;color:#a0aec0;margin-bottom:30px;text-shadow:0 0 15px rgba(0,0,0,0.5);animation:textFadeIn 2s 0.5s ease-out forwards;opacity:0;}
+@keyframes textFadeIn{0%{opacity:0;transform:translateY(25px);}100%{opacity:1;transform:translateY(0);}}
+.btn{padding:16px 32px;border-radius:14px;background:#06b6d4;color:#0b0f1a;font-weight:700;text-decoration:none;transition:0.3s;box-shadow:0 6px 20px rgba(6,182,212,0.5);}
+.btn:hover{transform:scale(1.15) translateY(-3px);box-shadow:0 12px 35px rgba(6,182,212,0.8);}
+
+/* مقالات */
+.articles{max-width:1200px;margin:50px auto;padding:0 20px;}
+.articles h2{text-align:center;font-size:2.8rem;color:#06b6d4;margin-bottom:50px;text-shadow:0 0 20px rgba(6,182,212,0.7);}
+.article-card{background:#141b2d;padding:25px;border-radius:20px;box-shadow:0 10px 25px rgba(6,182,212,0.2);transition:transform 0.3s,box-shadow 0.3s;margin-bottom:25px;}
+.article-card h3{color:#06b6d4;margin-bottom:15px;}
+.article-card p{color:#a0aec0;line-height:1.6;}
+.article-card:hover{transform:scale(1.05);box-shadow:0 15px 35px rgba(6,182,212,0.5);}
+
+/* توانایی‌ها */
+.skills{padding:60px 20px;}
+.skills h2{text-align:center;font-size:2.8rem;color:#06b6d4;margin-bottom:50px;text-shadow:0 0 20px rgba(6,182,212,0.7);}
+.skill-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;max-width:1200px;margin:auto;}
+.skill-item{background:#141b2d;padding:25px;border-radius:20px;box-shadow:0 10px 25px rgba(6,182,212,0.2);transition:transform 0.3s; text-align: center;}
+.skill-item h3{color:#06b6d4;margin-bottom:10px;}
+.skill-item p{color:#a0aec0;}
+.skill-item:hover{transform:scale(1.05);box-shadow:0 15px 35px rgba(6,182,212,0.5);}
+
+/* خدمات */
+.services{padding:60px 20px;}
+.services h2{text-align:center;font-size:2.8rem;color:#06b6d4;margin-bottom:50px;text-shadow:0 0 20px rgba(6,182,212,0.7);}
+.service-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;max-width:1200px;margin:auto;}
+.service-item{background:#141b2d;padding:25px;border-radius:20px;box-shadow:0 10px 25px rgba(6,182,212,0.2);transition:transform 0.3s;}
+.service-item h3{color:#06b6d4;margin-bottom:10px;}
+.service-item p{color:#a0aec0;}
+.service-item:hover{transform:scale(1.05);box-shadow:0 15px 35px rgba(6,182,212,0.5);}
+
+/* فرم سفارش */
+.order-form{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:700px;margin:auto;margin-bottom:50px;}
+.order-form input,.order-form select,.order-form textarea{padding:14px;border-radius:12px;border:none;background:#141b2d;color:#fff;font-size:15px;box-shadow:0 5px 15px rgba(6,182,212,0.2);transition:0.3s;}
+.order-form input:focus,.order-form select:focus,.order-form textarea:focus{outline:none;box-shadow:0 0 20px rgba(6,182,212,0.7);transform:translateY(-2px);}
+.order-form textarea{grid-column:1/-1;min-height:140px;resize:vertical;}
+.order-form button{grid-column:1/-1;padding:16px 0;border-radius:14px;background:#06b6d4;color:#0b0f1a;font-weight:700;font-size:16px;border:none;cursor:pointer;box-shadow:0 6px 20px rgba(6,182,212,0.5);transition:0.3s;}
+.order-form button:hover{transform:scale(1.05) translateY(-2px);box-shadow:0 12px 35px rgba(6,182,212,0.8);}
+#response{max-width:700px;margin:20px auto;text-align:center;font-weight:600;}
+
+/* دکمه‌های شناور */
+.floating-btn{position:fixed;width:60px;height:60px;cursor:pointer;z-index:1000;transition:all 0.3s ease;}
+#telegram-btn{bottom:90px;right:20px;}
+#instagram-btn{bottom:20px;right:20px;}
+.btn-circle{width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,0.3);transition:0.3s;animation:float 3s ease-in-out infinite alternate;}
+.btn-circle img{width:28px;height:28px;transition:0.3s;}
+.btn-circle.telegram{background: linear-gradient(135deg,#1a1a2e,#2a2a40);box-shadow:0 6px 20px rgba(0,198,255,0.5);border:2px solid #00c6ff;}
+.btn-circle.instagram{background: linear-gradient(135deg,#f09433,#bc1888,#bc2a8d,#fd1d1d,#fcb045);box-shadow:0 6px 20px rgba(255,0,128,0.5);border:2px solid #fff;}
+.floating-btn:hover .btn-circle{transform:scale(1.15) rotate(10deg);box-shadow:0 12px 30px rgba(0,0,0,0.6);}
+.floating-btn:hover img{transform:scale(1.2);}
+@keyframes float{0%{transform:translateY(0px);}50%{transform:translateY(-8px);}100%{transform:translateY(0px);}}
+@media (max-width:768px){.order-form{grid-template-columns:1fr;gap:15px;}.skill-list,.service-list{grid-template-columns:1fr;}}
+@keyframes float{
+  0%{transform:translateY(0) rotateX(0deg) rotateY(0deg);}
+  50%{transform:translateY(-15px) rotateX(15deg) rotateY(15deg);}
+  100%{transform:translateY(0) rotateX(0deg) rotateY(0deg);}
+}
+
+.icon-3d:hover{
+  transform:rotateX(20deg) rotateY(20deg) scale(1.2);
+  box-shadow:0 20px 40px rgba(0,198,255,0.7),0 0 30px rgba(0,198,255,0.3) inset;
+  transition:0.3s;
+}
+.services h2, .services h3 {
+  opacity: 1; /* همیشه نمایش داده شوند */
+}
+
+.service-item p {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.5s ease;
+}
+
+.service-item p.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.articles h2, .articles h3 {
+  opacity: 1; /* همیشه دیده شوند */
+}
+
+.article-card p {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.6s ease;
+}
+
+.article-card p.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.iran-logo-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  background: transparent; /* یا هم‌رنگ سایت */
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-img {
+  width: 200px; /* اندازه لوگو */
+  height: auto;
+  display: block;
+}
+
+.logo-text {
+  margin-top: 15px;
+  color: #06b6d4; /* هم‌رنگ سایت */
+  font-size: 24px;
+  font-weight: bold;
+}
+/* غیرقابل انتخاب کل سایت */
+body {
+  user-select: none;       /* غیرقابل انتخاب متن */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* غیرقابل درگ کردن همه عکس‌ها */
+img {
+  -webkit-user-drag: none;
+  user-drag: none;
+  pointer-events: auto; /* همچنان کلیک بشه ولی درگ نشه */
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <canvas id="sky-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;"></canvas>
+  <img src="-2147483648_-211238-removebg-preview.png" alt="لوگو">
+  <h1>Site.Craftt.ir — توسعه‌دهنده وب حرفه‌ای</h1>
+  <p>ساخت سایت‌های واکنش‌گرا، فروشگاهی، شرکتی و پورتفولیو با کیفیت بالا و متحرک</p>
+  <a href="#order-links" class="btn">ثبت پروژه وب</a>
+</header>
+
+<!-- مقالات -->
+<section class="articles">
+  <h2>نکته های حرفه‌ای وب</h2>
+  <div class="article-card"><h3>۱. بهینه‌سازی سرعت سایت</h3><p>کم کردن حجم تصاویر، بهینه‌سازی CSS و JS و استفاده از کش مرورگر.</p></div>
+  <div class="article-card"><h3>۲. طراحی واکنش‌گرا</h3><p>سایت باید روی موبایل، تبلت و دسکتاپ بدون مشکل نمایش داده شود.</p></div>
+  <div class="article-card"><h3>۳. انتخاب رنگ مناسب</h3><p>رنگ‌بندی هماهنگ و کنتراست مناسب تجربه کاربری را افزایش می‌دهد.</p></div>
+  <div class="article-card"><h3>۴. سئو پایه</h3><p>استفاده از تگ‌ها، متادیتا و URL استاندارد برای دیده شدن بهتر در گوگل.</p></div>
+  <div class="article-card"><h3>۵. فونت مناسب</h3><p>استفاده از فونت واضح و مناسب باعث خوانایی بهتر می‌شود.</p></div>
+  <div class="article-card"><h3>۶. امنیت سایت</h3><p>استفاده از HTTPS، به‌روز‌رسانی مداوم و محافظت از فرم‌ها.</p></div>
+  <div class="article-card"><h3>۷. لود تنبل تصاویر</h3><p>با lazy loading سرعت لود اولیه صفحه را کاهش دهید.</p></div>
+  <div class="article-card"><h3>۸. انیمیشن‌های سبک</h3><p>انیمیشن باید جذاب باشد ولی بار اضافی روی سایت نگذارد.</p></div>
+  <div class="article-card"><h3>۹. منوی کاربر پسند</h3><p>منوها باید ساده و واضح باشند تا کاربر سریع دسترسی پیدا کند.</p></div>
+  <div class="article-card"><h3>۱۰. لینک‌های داخلی</h3><p>استفاده از لینک‌های داخلی برای افزایش زمان حضور کاربر در سایت.</p></div>
+  <div class="article-card"><h3>۱۱. فرم تماس ساده</h3><p>فرم باید کوتاه و کاربر پسند باشد تا نرخ ارسال افزایش یابد.</p></div>
+  <div class="article-card"><h3>۱۲. استفاده از CDN</h3><p>برای سرعت بیشتر، فایل‌های CSS و JS را از CDN بارگذاری کنید.</p></div>
+  <div class="article-card"><h3>۱۳. تصاویر با کیفیت</h3><p>تصاویر باید کیفیت کافی داشته باشند ولی حجم اضافی نداشته باشند.</p></div>
+  <div class="article-card"><h3>۱۴. تحلیل رفتار کاربران</h3><p>استفاده از ابزارهای آنالیز مثل گوگل آنالیتیکس برای بهبود سایت.</p></div>
+  <div class="article-card"><h3>۱۵. نگهداری و آپدیت منظم</h3><p>سایت باید همیشه به‌روز باشد تا عملکرد و امنیت حفظ شود.</p></div>
+</section>
+
+<!-- توانایی‌ها -->
+<section class="skills">
+  <h2>توانایی‌ها و مهارت‌ها</h2>
+  <div class="skill-list">
+    <div class="skill-item"><h3>HTML & CSS</h3><p>طراحی صفحات واکنش‌گرا و زیبا با HTML5 و CSS3.</p></div>
+    <div class="skill-item"><h3>JavaScript</h3><p>تعامل و انیمیشن‌های جذاب و کاربردی برای سایت.</p></div>
+  </div>
+</section>
+
+<!-- خدمات -->
+<section class="services">
+  <h2>خدمات ارائه‌شده</h2>
+  <div class="service-list">
+    <div class="service-item">
+      <h3>طراحی سایت فروشگاهی</h3>
+      <p>ایجاد فروشگاه آنلاین با پرداخت امن و سئو پایه.</p>
+    </div>
+    <div class="service-item">
+      <h3>سایت شرکتی</h3>
+      <p>معرفی شرکت، خدمات و تیم به صورت حرفه‌ای و مدرن.</p>
+    </div>
+    <div class="service-item">
+      <h3>پورتفولیو شخصی</h3>
+      <p>نمایش نمونه کارها و رزومه آنلاین برای افراد و فریلنسرها.</p>
+    </div>
+    <div class="service-item">
+      <h3>Landing Page</h3>
+      <p>صفحات فرود حرفه‌ای برای جذب لید و کمپین‌های تبلیغاتی.</p>
+    </div>
+  </div>
+</section>
+
+<section style="text-align:center;margin:50px 0;" id="order-links">
+  <h2 style="color:#06b6d4;margin-bottom:30px;text-shadow:0 0 20px rgba(6,182,212,0.7);">برای ثبت سفارش به آیدی‌های زیر مراجعه کنید</h2>
+  
+  <div style="display:flex;justify-content:center;gap:50px;flex-wrap:wrap;">
+    <!-- تلگرام -->
+    <a href="https://t.me/Site_Craftt_ir" target="_blank" style="display:inline-block;perspective:800px;">
+      <div class="icon-3d" style="width:100px;height:100px;border-radius:50%;overflow:hidden;box-shadow:0 10px 30px rgba(0,198,255,0.5);transition:0.3s;animation:float 2s ease-in-out infinite alternate;">
+        <img src="images-removebg-preview.png" alt="تلگرام" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+    </a>
+    
+    <!-- اینستاگرام -->
+    <a href="https://instagram.com/Site.Craftt.ir" target="_blank" style="display:inline-block;perspective:800px;">
+      <div class="icon-3d" style="width:100px;height:100px;border-radius:50%;overflow:hidden;box-shadow:0 10px 30px rgba(255,0,128,0.5);transition:0.3s;animation:float 2.5s ease-in-out infinite alternate;">
+        <img src="instagram-logo-1.png" alt="اینستاگرام" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="iran-logo-section">
+  <div class="logo-container">
+    <img src="iran.png" alt="لوگو ایران" class="logo-img">
+    <div class="logo-text">خلیج همیشه فارس</div>
+  </div>
+</section>
+
+<footer style="text-align:center;padding:20px;color:#94a3b8;"> Site.Craftt.ir توسعه دهنده وب &copy; </footer>
+
+
+<script>
+  // جلوگیری از راست کلیک
+  document.addEventListener('contextmenu', e => e.preventDefault());
+
+  // جلوگیری از Ctrl+U و Ctrl+S و Ctrl+C
+  document.addEventListener('keydown', e => {
+    if(e.ctrlKey && ['u','s','c'].includes(e.key.toLowerCase())) e.preventDefault();
+  });
+</script>
+
+<script>
+// پس‌زمینه موجی
+const canvas = document.getElementById('sky-canvas');
+const ctx = canvas.getContext('2d');
+
+let width = canvas.width = window.innerWidth;
+let height = canvas.height = window.innerHeight;
+
+window.addEventListener('resize', () => {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
+});
+
+// ستاره‌ها
+const stars = [];
+const starCount = 200;
+for(let i=0;i<starCount;i++){
+  stars.push({
+    x: Math.random()*width,
+    y: Math.random()*height,
+    radius: Math.random()*1.5 + 0.5,
+    alpha: Math.random(),
+    delta: Math.random()*0.02
+  });
+}
+
+// شهاب‌سنگ‌ها
+const meteors = [];
+const meteorCount = 5;
+
+function spawnMeteor(){
+  meteors.push({
+    x: Math.random()*width,
+    y: -10,
+    length: Math.random()*80 + 50,
+    speed: Math.random()*8 + 5,
+    angle: Math.random()*0.5 + 0.3 // زاویه حرکت
+  });
+}
+
+setInterval(() => {
+  if(meteors.length < meteorCount){
+    spawnMeteor();
+  }
+}, 1000);
+
+// انیمیشن
+function animate(){
+  ctx.fillStyle = 'rgba(0,0,20,1)'; // آسمان شب
+  ctx.fillRect(0,0,width,height);
+
+  // ستاره‌ها
+  stars.forEach(s => {
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.radius, 0, Math.PI*2);
+    ctx.fillStyle = `rgba(255,255,255,${s.alpha})`;
+    ctx.fill();
+    s.alpha += s.delta;
+    if(s.alpha >= 1 || s.alpha <= 0) s.delta *= -1;
+  });
+
+  // شهاب‌سنگ‌ها
+  for(let i = meteors.length-1;i>=0;i--){
+    const m = meteors[i];
+    m.x += Math.cos(m.angle)*m.speed;
+    m.y += Math.sin(m.angle)*m.speed;
+    ctx.beginPath();
+    ctx.moveTo(m.x, m.y);
+    ctx.lineTo(m.x - Math.cos(m.angle)*m.length, m.y - Math.sin(m.angle)*m.length);
+    ctx.strokeStyle = 'rgba(255,255,200,0.8)';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    if(m.y - m.length > height || m.x - m.length > width){
+      meteors.splice(i,1);
+    }
+  }
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+
+// جلوگیری از کپی و سورس
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', e => {
+  if(e.ctrlKey && (e.key==='u' || e.key==='s' || e.key==='c')) e.preventDefault();
+  // قبل از obfuscate
+function greet(name) {
+  alert("سلام " + name);
+}
+
+// بعد از obfuscate (نمونه)
+var _0x12ab=["\u0633\u0644\u0627\u0645 "];function greet(_0x34cd){alert(_0x12ab[0]+_0x34cd);}
+});
+window.addEventListener('DOMContentLoaded', () => {
+  const paragraphs = document.querySelectorAll('.service-item p');
+  paragraphs.forEach((p, index) => {
+    setTimeout(() => {
+      p.classList.add('show');
+    }, index * 500); // هر متن 0.5 ثانیه بعد از قبلی ظاهر میشه
+  });
+});
+// ساخت یک Observer برای تمام کارت‌ها
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const p = entry.target.querySelector('p');
+      if (p) {
+        p.classList.add('show');
+      }
+      observer.unobserve(entry.target); // فقط یکبار انیمیشن اجرا شود
+    }
+  });
+}, { threshold: 0.1 }); // وقتی ۱۰٪ کارت در صفحه دید شد
+
+document.querySelectorAll('.article-card').forEach(card => {
+  observer.observe(card);
+});
+</script>
+</body>
+</html>
